@@ -64,3 +64,15 @@ def request_forecast(city_id):
         pass
 
 
+city_id = 519690
+
+import sys
+if len(sys.argv) == 2:
+    s_city_name = sys.argv[1]
+    print("city:", s_city_name)
+    city_id = get_city_id(s_city_name)
+elif len(sys.argv) > 2:
+    print('Enter name of city as one argument. For example: Kyiv.UA')
+    sys.exit()
+
+request_forecast(city_id)
